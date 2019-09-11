@@ -5,7 +5,7 @@ variable "parameter_read" {
 }
 
 variable "parameter_write" {
-  type = list(string)
+  type = list(map(string))
 
   description = <<DESC
   List of maps with the Parameter values in this format.
@@ -16,7 +16,7 @@ variable "parameter_write" {
     type = "SecureString" // Required - Valid types are String, StringList and SecureString
     value = "password1" // Required
     description = "Production database master password" // Optional
-    overwrite = false // Optional - Force Overwrite of value if true. 
+    overwrite = false // Optional - Force Overwrite of value if true.
   }]
 DESC
 
